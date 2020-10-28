@@ -1,0 +1,71 @@
+<!-- Exercise 1: Who do we have here?
+
+Wouldn't it cool to make a new friend with just the click of a button?
+
+Write a function that makes a HTTP Request to https://www.randomuser.me/api
+
+Inside the JavaScript file write two functions: one with XMLHttpRequest, and the other with axios
+Each function should make a HTTP Request to the given endpoint: https://www.randomuser.me/api
+Log the received data to the console
+Incorporate error handling: log to the console the error message -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Make a new friend</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+
+  <body>
+    <button id="xhrButton">load text-Xhr</button>
+    <button id="axiosButton">load text-Axios</button>
+
+    <script>
+      document
+        .getElementById('xhrButton')
+        .addEventListener('click', loadTextXhr);
+      document
+        .getElementById('axiosButton')
+        .addEventListener('click', loadTextAxios);
+
+      function loadTextXhr() {
+        //create XHR Object
+        let xhr = new XMLHttpRequest();
+        //OPEN -type, url/file , async
+        xhr.open('GET', 'https://www.randomuser.me/api', true);
+
+        // with onload only check for state 4
+        xhr.onload = function () {
+          //check if http request was successful(200) and request has been completed(4)
+          if (this.status == 200) {
+            console.log(JSON.parse(xhr.responseText));
+          }
+        };
+        //xhr error handling
+        xhr.onerror = function () {
+          console.log('Request Error...');
+        };
+        // with onreadystatechange check all state (1,2,3,4) until get 4
+        // xhr.onreadystatechange = function(){
+        //   if (this.status == 200 && this.readyState == 4)
+        //   console.log(JSON.parse(xhr.responseText));
+
+        // }
+        //Sends request
+        xhr.send();
+      }
+
+      function loadTextAxios() {
+        axios
+          .get('https://www.randomuser.me/api')
+          .then((res) => console.log(res))
+          .catch((err) => console.error(err));
+      }
+
+      loadTextXhr();
+      loadTextAxios();
+    </script>
+  </body>
+</html>

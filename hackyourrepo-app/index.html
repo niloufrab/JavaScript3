@@ -13,6 +13,8 @@
     <link rel="apple-touch-icon" href="./hyf.png" />
     <link rel="shortcut icon" type="image/png" href="./hyf.png" />
     <title>HackYourRepo</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
     <link
       href="https://fonts.googleapis.com/css?family=Roboto:400,700"
       rel="stylesheet"
@@ -20,6 +22,42 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
+    <header id="header">
+      <h1>HYF Repositories</h1>
+
+      <select name="" id="select">
+        <option value="">Select option</option>
+      </select>
+    </header>
+
+    <main id="main">
+      <section id="repoDetail">
+        <div class="repoName">
+          <h4>Repository :</h4>
+          <h6></h6>
+        </div>
+
+        <div class="repoDescription">
+          <h4>Description :</h4>
+          <h6></h6>
+        </div>
+
+        <div class="forks">
+          <h4>Forks :</h4>
+          <h6></h6>
+        </div>
+
+        <div class="repoUpdate">
+          <h4>Updates :</h4>
+          <h6></h6>
+        </div>
+      </section>
+
+      <section id="contributors">
+        <h5>Contributers</h5>
+      </section>
+    </main>
+
     <script src="./script.js"></script>
   </body>
 </html>
