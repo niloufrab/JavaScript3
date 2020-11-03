@@ -1,3 +1,108 @@
 /* 
   Write here your CSS rules for HackYourRepo!
 */
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
+}
+
+/* main style */
+body {
+  max-width: 70%;
+  margin: auto;
+}
+
+header {
+  height: 60px;
+  display: flex;
+  color: white;
+  font-size: xx-small;
+  background-color: hsl(231, 48%, 48%);
+  justify-content: start;
+  align-items: center;
+  padding: 10px;
+}
+
+header #select {
+  margin: 10px;
+}
+
+#main {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+#repoDetail {
+  display: flex;
+  height: 170px;
+  width: 50%;
+  flex-direction: column;
+  margin-top: 2px;
+  padding: 10px;
+  border: 1px solid #dbdbdb;
+  box-shadow: 1px 2px #dbdbdb;
+  border-radius: 2px;
+}
+
+#contributors {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 10px;
+  padding: 10px;
+}
+
+img {
+  width: 50px;
+}
+
+/* mobile style */
+
+@media screen and (min-width: 481px) {
+  body {
+    font-size: xx-small;
+    max-width: 80%;
+  }
+
+  h4 {
+    font-size: 1em;
+  }
+
+  h6 {
+    font-size: 0.85em;
+  }
+}
+
+/* tablet style */
+@media screen and (min-width: 769px) {
+  body {
+    max-width: 80%;
+  }
+
+  main {
+    max-width: 80%;
+    font-size: medium;
+  }
+}
+
+/* desktop style */
+@media screen and (min-width: 1280px) {
+  main {
+    max-width: 80%;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+  h4 {
+    font-size: 1.1em;
+  }
+
+  h6 {
+    font-size: 1em;
+  }
+}
